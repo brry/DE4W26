@@ -21,7 +21,7 @@ Jump to [R](#r), [Git](#git), [Python](#python), [VScode](#vscode), [qmd](#qmd),
 #### Git
 
 - <mark>Step 2a</mark>: in a sensible (easy to reach) location on your computer, 
-create a folder for this course. Use a short expressive name like `DataEngineeringWearables`.
+create a folder for this course. Use a short expressive name like `DataEngineeringWearables`. Do not use spaces in file/folder names, see [good practices](https://brry.github.io/course/good-practice.html).
 - <mark>Step 2b</mark>: install [git](https://brry.github.io/course/git.html), including the SSH key setup.  
   If you already have a personal github account, use that :)
 - <mark>Step 2c</mark>: follow the [use git](https://brry.github.io/course/git.html#use-git) 
