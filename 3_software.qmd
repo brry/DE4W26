@@ -39,15 +39,11 @@ format:
 - Interpreted language (no compilation)
 - High-level (readable for humans)
 - Dynamic typing and binding (data type checked at run-time)
-- **Python:** object-oriented (methods bundled with data)
-- **R:** functional (functions return reproducible results)
 - Coding makes your work efficient, productive and replicable
 
 ---
 
 ## When to use which language
-
-in descending order of importance:
 
 - Use what you're most comfortable with!
 - Use what your team uses

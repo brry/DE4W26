@@ -74,14 +74,14 @@
     "href": "3_software.html#why-learn-python-and-r",
     "title": "DE4W tutorial: Software",
     "section": "Why learn Python and R",
-    "text": "Why learn Python and R\n\nLanguages for data analysis / visualization and statistics\nWidely used in research and business\nFree, open source (accountable, reproducible, expandable)\nLarge user community (many methods)\nInterpreted language (no compilation)\nHigh-level (readable for humans)\nDynamic typing and binding (data type checked at run-time)\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\nCoding makes your work efficient, productive and replicable"
+    "text": "Why learn Python and R\n\nLanguages for data analysis / visualization and statistics\nWidely used in research and business\nFree, open source (accountable, reproducible, expandable)\nLarge user community (many methods)\nInterpreted language (no compilation)\nHigh-level (readable for humans)\nDynamic typing and binding (data type checked at run-time)\nCoding makes your work efficient, productive and replicable"
   },
   {
     "objectID": "3_software.html#when-to-use-which-language",
     "href": "3_software.html#when-to-use-which-language",
     "title": "DE4W tutorial: Software",
     "section": "When to use which language",
-    "text": "When to use which language\nin descending order of importance:\n\nUse what you’re most comfortable with!\nUse what your team uses\nChoose by strengths (ease of use, choice of packages):\n\nPython: Machine Learning\nR: stats / visualisation / data analysis\n(both can do all of this)\n\nChoose by programming philosophy:\n\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\n\nChoose by implementation details:\n\nPython: informative error messages, systematic function naming\nR: easy install, easy REPL, F1 for help, systematic code syntax"
+    "text": "When to use which language\n\nUse what you’re most comfortable with!\nUse what your team uses\nChoose by strengths (ease of use, choice of packages):\n\nPython: Machine Learning\nR: stats / visualisation / data analysis\n(both can do all of this)\n\nChoose by programming philosophy:\n\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\n\nChoose by implementation details:\n\nPython: informative error messages, systematic function naming\nR: easy install, easy REPL, F1 for help, systematic code syntax"
   },
   {
     "objectID": "3_software.html#good-coding-practices",
