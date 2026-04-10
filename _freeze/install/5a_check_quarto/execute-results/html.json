@@ -1,0 +1,17 @@
+{
+  "hash": "543dff5f8b7cdd0fff721c9c0e9866d8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"check_quarto\"\nformat:\n  html:\n    embed-resources: true\n---\n\n## Section title\n\nThis is a mini [quarto](https://quarto.org/) document with text and some R code.  \n\n- in RStudio, click \"Render\" at the top\n- in VScode, click the Preview button (topright)\n\nThis will execute the code chunks and weave together the text, code and output.\n\nIn RStudio, I recommend to set (Cog symbol)  \n- `Preview in Viewer Pane`  \n- and (personal preference) `Chunk Output in Console`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\npairs(iris[, 1:4], main=\"Anderson's Iris Data\",\n      col=c(\"orange\", \"salmon\", \"lightblue\")[unclass(iris$Species)], \n\t  pch=16, cex=1.5, lower.panel=NULL, las=1)\n```\n\n::: {.cell-output-display}\n![](5a_check_quarto_files/figure-html/plot_example-1.png){width=672}\n:::\n:::\n\n\nMore in lesson i.2, specifically the homework.\n\n\n## Diagnostics for 5c_check_quarto_python.qmd\n\n\n::: {.cell}\n\n```{.r .cell-code}\nreticulate::py_config()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\npython:         C:/Users/Berry/Documents/.virtualenvs/r-reticulate/Scripts/python.exe\nlibpython:      C:/Users/Berry/AppData/Local/r-reticulate/r-reticulate/pyenv/pyenv-win/versions/3.13.2/python313.dll\npythonhome:     C:/Users/Berry/Documents/.virtualenvs/r-reticulate\nversion:        3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/Users/Berry/Documents/.virtualenvs/r-reticulate/Lib/site-packages/numpy\nnumpy_version:  2.4.2\n```\n\n\n:::\n:::\n\n",
+    "supporting": [
+      "5a_check_quarto_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
