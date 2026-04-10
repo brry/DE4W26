@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "install/5c_check_quarto_python.html",
+    "href": "install/5c_check_quarto_python.html",
+    "title": "check_quarto_python",
+    "section": "",
+    "text": "Testing python chunk execution\n\nlibrary(reticulate)\n\n\ntesting_object = 44\n\n\ntesting_object = testing_object + 11\n\nIn RStudio in the following chunk, click on the arrow to “run all chunks above”, then inside the chunk double-click on testing_object to mark it and hit CTRL/CMD + ENTER to see if you can directly see 55.\n\ntesting_object\n\n55\n\n\nIf this is not the case, check this issue on Mac for a workaround."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DE4W26 – Data Engineering for Wearables",
+    "section": "",
+    "text": "Tutorial sessions, supportive to the moodle course.\n\n\n\nDate\nTopic\n\n\n\n\n2026-04-14\ntbd\n\n\n2026-04-21\ntbd\n\n\n2026-04-28\nPython, R, IDE, installation: slides, guide\n\n\n2026-05-05\ngit + quarto: slides, homework\n\n\n2026-05-12\npractical git + markdown usage, data science pipeline\n\n\n2026-05-19\ntbd"
+  },
+  {
+    "objectID": "4_practice.html",
+    "href": "4_practice.html",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "",
+    "text": "Implement the ideas below that seem useful to you. Keep your changes local (don’t push to the online repo).\nFurther ideas"
+  },
+  {
+    "objectID": "4_practice.html#check-package-availability",
+    "href": "4_practice.html#check-package-availability",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "Check package availability",
+    "text": "Check package availability\n\nimport matplotlib, pandas\n\n\nif(!requireNamespace(\"rdwd\", quietly=TRUE))\n    install.packages(\"rdwd\")\nrdwd::updateRdwd()\n\nrdwd is up to date, compared to github.com/brry/rdwd. Version 1.9.12 (2026-03-30)"
+  },
+  {
+    "objectID": "4_practice.html#get-weather-data",
+    "href": "4_practice.html#get-weather-data",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "Get weather data",
+    "text": "Get weather data\ndownload recent weather data using rdwd\n\nlibrary(rdwd)\nlink &lt;- selectDWD(\"Potsdam\", res=\"daily\", var=\"kl\", per=\"recent\")\nclim &lt;- dataDWD(link, varnames=TRUE, force=24, quiet=TRUE)"
+  },
+  {
+    "objectID": "4_practice.html#visualise-recent-temperature",
+    "href": "4_practice.html#visualise-recent-temperature",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "Visualise recent temperature",
+    "text": "Visualise recent temperature\n\nplotDWD(clim, \"TMK.Lufttemperatur\", main=range(clim$MESS_DATUM))"
+  },
+  {
+    "objectID": "4_practice.html#transfer-to-python",
+    "href": "4_practice.html#transfer-to-python",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "Transfer to Python",
+    "text": "Transfer to Python\n\nclim_py = r.clim\nprint(f\"Dataset shape: {clim_py.shape[0]} rows, {clim_py.shape[1]} columns\")\nclim_py = clim_py.select_dtypes(include=['float64', 'int64'])\nclim_py.hist(figsize=(20, 16), bins=5)"
+  },
+  {
+    "objectID": "4_practice.html#summary-statistics",
+    "href": "4_practice.html#summary-statistics",
+    "title": "Data engineering for wearables quarto demo",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\n# Calculate and display some basic statistics\nprint(\"\\n=== Summary Statistics for Temperature ===\")\n\n\n=== Summary Statistics for Temperature ===\n\ntemp_stats = clim_py['TMK.Lufttemperatur'].describe()\nprint(temp_stats)\n\ncount    550.000000\nmean       8.548182\nstd        7.340852\nmin       -8.000000\n25%        3.325000\n50%        8.300000\n75%       13.775000\nmax       29.200000\nName: TMK.Lufttemperatur, dtype: float64"
+  },
+  {
+    "objectID": "3_installation.html",
+    "href": "3_installation.html",
+    "title": "",
+    "section": "",
+    "text": "Software installation guide\nfor ‘Data engineering for wearables’\nbased on instructions for Fundamentals of Programming\nFor data engineering pipelines, you have a lot of software to install.\nIt’s a bit much at once, but it will be worth it!\nAny improvements to this guide are very welcome!\nJump to R, Git, Python, VScode, qmd, Misc\n\nR\n\nStep 1a: install R + RStudio, change the Rdata settings\nStep 1b: check if R is on the PATH and has a version &gt; 4.3.x.\n\n\n\nGit\n\nStep 2a: in a sensible (easy to reach) location on your computer, create a folder for this course. Use a short expressive name like DataEngineeringWearables.\nStep 2b: install git, including the SSH key setup.\nIf you already have a personal github account, use that :)\nStep 2c: follow the use git section to download this repo into your main course folder (step 2a).\nStep 2d: run install/2d_install_Rpackages.R. Tip: Use the Files pane (RStudio bottom right) to select and open the file.\n\nFrom now on, keyboard shortcuts with CTRL mean CMD on MacOS.\n\n\nPython\n\nStep 3a: check if Python is installed:\n\nin a terminal (see step 1b), type python\nif found with a version 3.9+, type quit or quit() and proceed to step 3c.\nif not found, open the file install/3a_check_python_installed.py with any IDE.\nrun it as instructed inside.\nsee if you get a printout with a version &gt; 3.9.\nif yes, skip step 3b. You do NOT want several versions of Python installed.\n\nStep 3b: if not yet installed, install Python with one of\n\nstandalone installation: Python, hints on Windows\ninstallation via R (way easier, especially on Mac): run install/3b_install_python.R line by line\n\nStep 3c: install Python modules:\n\nif installed via reticulate, in an R console (e.g. in RStudio), run\nreticulate::py_install(c(\"numpy\", \"pandas\", \"matplotlib\"))\nelse, run in the terminal (step 1b):\npip install numpy pandas matplotlib (pip3 on Mac)\n\nStep 3d: run install/3d_check_python_setup.py\n\n\n\nVScode\nOn Berry’s behalf, this step is optional. I will demo everything in RStudio.\n\nStep 4a: install VScode, then\n\nin the Explorer Tab CTRL + SHIFT + E, open the main course folder from step 2a.\nwhen prompted: manage restricted mode - add folder, click “trust”\nopen the settings (CTRL + ,), search “workbench editor enable preview” and uncheck the box\n\nStep 4b: disable telemetry if you don’t want to send data to Micro$oft:\n\nopen the Settings (CTRL + ,), search “Telemetry level”, set to “off”\nopen the Command Palette (CTRL + SHIFT + P), search “Configure Runtime Arguments” and in the argv.json file, change the value for “enable-crash-reporter” to false, restart VScode\n\nStep 4c: run R scripts in VScode:\n\nopen the file install/4c_set_cran_mirror.R (Explorer Tab CTRL + SHIFT + E)\ninstall the R extension when prompted (or manually under Extensions with CTRL + SHIFT + X)\nrun the file and (as instructed there), edit and save the .Rprofile file\n\nStep 4d: run Python scripts in VScode:\n\nopen install/3d_check_python_setup.py (don’t run it yet)\ninstall the Python extension when prompted (or manually)\nopen the Settings (CTRL + ,), search “execin”, check the box for “Python &gt; Terminal: execute in file dir” (Source)\nnow run the file as instructed inside.\n\nStep 4e: customize keyboard shortcuts, suggestions as in RStudio.\n\npress CTRL + K + S (or click the cog wheel at the bottom left).\nset each wanted shortcut, then rightclick -&gt; “show same keybindings” to deal with duplicates.\n\nsearch for the action e.g. with “python run” or “comment”\n\n\n\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nPython: Run Selection/Line in Python Terminal\nCTRL + ENTER\n\n\nPython: Run Python File in Terminal\nCTRL + SHIFT + S\n\n\nToggle Line Comment andToggle Block Comment\nCTRL + SHIFT + C\n\n\nDelete Line\nCTRL + D\n\n\nDuplicate Selection\nCTRL + SHIFT + D\n\n\n\n\n\n\nqmd\n\nStep 5a: run quarto markdown scripts in VScode:\n\nopen install/5a_check_quarto.qmd\ninstall the Quarto extension when prompted (or manually)\nrender (a.k.a. compile) the file as instructed inside\n\nStep 5b: open install/5a_check_quarto.qmd in RStudio\n\nrender as instructed\n\nStep 5c: open install/5c_check_quarto_python.qmd in RStudio\n\nrun code chunks as instructed\n\n\n\n\nMisc\n\nStep 6: housekeeping:\n\non Windows: in the File explorer, click the “View” tab , then “Show” and check the boxes for “File name extensions” and “Hidden items”\non Mac: in any Finder folder, press CMD + Shift + . to show hidden files\n\n\nYou made it through! 🎉\nNow you’re set up for the rest of the course (and beyond).\nAgain: improvements to this guide are very welcome!"
+  },
+  {
+    "objectID": "3_software.html#welcome",
+    "href": "3_software.html#welcome",
+    "title": "DE4W tutorial: Software",
+    "section": "Welcome",
+    "text": "Welcome\n\nBerry     \n2008–2017 Geo-ecologie @ Potsdam University\n“accidentally” became an -fan\nR-packages , community , training & consulting \nSince 2019 lecturer @ HPI (chair Bert Arnrich)\nSince 2021 also -teacher\nMarried, new father\nRenovating our house (shared with friends)\nPlay ice hockey whenever the lake is frozen\nActive in erlebt Potsdam"
+  },
+  {
+    "objectID": "3_software.html#why-learn-python-and-r",
+    "href": "3_software.html#why-learn-python-and-r",
+    "title": "DE4W tutorial: Software",
+    "section": "Why learn Python and R",
+    "text": "Why learn Python and R\n\nLanguages for data analysis / visualization and statistics\nWidely used in research and business\nFree, open source (accountable, reproducible, expandable)\nLarge user community (many methods)\nInterpreted language (no compilation)\nHigh-level (readable for humans)\nDynamic typing and binding (data type checked at run-time)\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\nCoding makes your work efficient, productive and replicable"
+  },
+  {
+    "objectID": "3_software.html#when-to-use-which-language",
+    "href": "3_software.html#when-to-use-which-language",
+    "title": "DE4W tutorial: Software",
+    "section": "When to use which language",
+    "text": "When to use which language\nin descending order of importance:\n\nUse what you’re most comfortable with!\nUse what your team uses\nChoose by strengths (ease of use, choice of packages):\n\nPython: Machine Learning\nR: stats / visualisation / data analysis\n(both can do all of this)\n\nChoose by programming philosophy:\n\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\n\nChoose by implementation details:\n\nPython: informative error messages, systematic function naming\nR: easy install, easy REPL, F1 for help, systematic code syntax"
+  },
+  {
+    "objectID": "3_software.html#good-coding-practices",
+    "href": "3_software.html#good-coding-practices",
+    "title": "DE4W tutorial: Software",
+    "section": "Good coding practices",
+    "text": "Good coding practices\n\nDRY: Don’t repeat yourself\nDo not maintain multiple variants of code!\nDuplicate code → function / vectorize / loop\nCode should be clear, simple, modular, documented, fast, tested\nMany concrete tips at brry.github.io/course/good-practice.html"
+  },
+  {
+    "objectID": "3_software.html#ides",
+    "href": "3_software.html#ides",
+    "title": "DE4W tutorial: Software",
+    "section": "IDEs",
+    "text": "IDEs\nIntegrated Development Environment\n\nIf you already like one, use it!\nOtherwise:\nUse  for Python\nUse  for R\nsoftware installation guide in separate file 3_installation.html"
+  },
+  {
+    "objectID": "3_software.html#overview-vs-code",
+    "href": "3_software.html#overview-vs-code",
+    "title": "DE4W tutorial: Software",
+    "section": "Overview: VS Code",
+    "text": "Overview: VS Code\n\n\nRun script with play button (or custom keyboard shortcut)\nRun line / selection with SHIFT / CTRL + ENTER\nType quit() to get out of REPL mode (Read–eval–print loop)"
+  },
+  {
+    "objectID": "3_software.html#overview-rstudio",
+    "href": "3_software.html#overview-rstudio",
+    "title": "DE4W tutorial: Software",
+    "section": "Overview: RStudio",
+    "text": "Overview: RStudio"
+  },
+  {
+    "objectID": "4_publishing.html#use-git-and-github",
+    "href": "4_publishing.html#use-git-and-github",
+    "title": "git + quarto",
+    "section": "Use git and github",
+    "text": "Use git and github\n\nDownload repositories (online project folder)\nTrack your changes (backup + undo)\nDevelop code collaboratively\nHost codebase + documentation website (ex: runway)\nInstallation instructions"
+  },
+  {
+    "objectID": "4_publishing.html#copy-the-url-of-a-github-repo",
+    "href": "4_publishing.html#copy-the-url-of-a-github-repo",
+    "title": "git + quarto",
+    "section": "Copy the URL of a github repo",
+    "text": "Copy the URL of a github repo"
+  },
+  {
+    "objectID": "4_publishing.html#clone-a-repo",
+    "href": "4_publishing.html#clone-a-repo",
+    "title": "git + quarto",
+    "section": "Clone a repo",
+    "text": "Clone a repo\nVScode: guide\nRStudio:\n\nKeep exactly the github repo name as Project directory name!"
+  },
+  {
+    "objectID": "4_publishing.html#track-your-changes-in-small-batches",
+    "href": "4_publishing.html#track-your-changes-in-small-batches",
+    "title": "git + quarto",
+    "section": "Track your changes in small batches",
+    "text": "Track your changes in small batches\n\nIn a shared repo, Pull before you work.\nClick Commit to select files (or parts of them) for one unit of change.\n\nWrite a short informative message (why, not what) and press Commit.\nPush your commits to the github online repo."
+  },
+  {
+    "objectID": "4_publishing.html#quarto-documents",
+    "href": "4_publishing.html#quarto-documents",
+    "title": "git + quarto",
+    "section": "Quarto documents",
+    "text": "Quarto documents\n\nMix code and markdown text\nHassle-free and reproducible reports / presentations / websites\nOne main file with the single source of truth (SSOT)\nFull publishing ecosystem, see quarto.org\nR and Python chunks can both be included (and hand off data to each other)\nMany settings are available! (see quarto.org)\nIn RStudio, click File → New File → Quarto Document\nIn VScode, install the quarto extension, create a .qmd file — for a template, copy content e.g. from the quarto guide"
+  },
+  {
+    "objectID": "4_publishing.html#quarto-reports",
+    "href": "4_publishing.html#quarto-reports",
+    "title": "git + quarto",
+    "section": "Quarto reports",
+    "text": "Quarto reports"
+  },
+  {
+    "objectID": "4_publishing.html#quarto-presentations",
+    "href": "4_publishing.html#quarto-presentations",
+    "title": "git + quarto",
+    "section": "Quarto presentations",
+    "text": "Quarto presentations\n\nformat: revealjs, incremental: true, echo: true\nchalkboard, embed-resources\nvisual editor\n## slide title\n. . . (with blank lines) for animation\n![figure caption](figure.png)"
+  },
+  {
+    "objectID": "4_publishing.html#quarto-tips-tricks",
+    "href": "4_publishing.html#quarto-tips-tricks",
+    "title": "git + quarto",
+    "section": "Quarto tips & tricks",
+    "text": "Quarto tips & tricks\n\nRStudio Cog button settings:\n\npreview in Viewer pane\nchunk output in console\n\nName your chunks for rendering progress, debugging, figure file names, cache names\nUse code folding :)\nMore ideas in the homework"
+  },
+  {
+    "objectID": "4_publishing.html#sharing-documentspresentations",
+    "href": "4_publishing.html#sharing-documentspresentations",
+    "title": "git + quarto",
+    "section": "Sharing documents/presentations",
+    "text": "Sharing documents/presentations\nIn order of complexity / effort:\n\nSimple qmd file in some repo: qmd → html → rendered (alt)\nReadme file in dedicated github repo: qmd → readme\nSimple website with short URL: qmd → brry.github.io/ice\nComplex website: qmd → brry.github.io/rdwd"
+  },
+  {
+    "objectID": "4_publishing.html#homework",
+    "href": "4_publishing.html#homework",
+    "title": "git + quarto",
+    "section": "Homework",
+    "text": "Homework\n\nimplement suggested changes in 4_practice.qmd"
+  },
+  {
+    "objectID": "4_publishing.html#summary-use-version-control-and-quarto-markdown-documents",
+    "href": "4_publishing.html#summary-use-version-control-and-quarto-markdown-documents",
+    "title": "git + quarto",
+    "section": "Summary: use version control and quarto markdown documents",
+    "text": "Summary: use version control and quarto markdown documents\n\nCopy github repo URL\nClone (download):\n\nVScode: Source Control → Clone Repository\nRStudio: create project (version control)\n\nWork, commit, repeat\nPull (if in a team)\nPush (upload)\nqmd: one single main file with text and code\nCode chunks in any programming language\nCan be compiled to html, pdf, website\nHomework: make changes in the qmd file"
+  },
+  {
+    "objectID": "install/5a_check_quarto.html",
+    "href": "install/5a_check_quarto.html",
+    "title": "check_quarto",
+    "section": "",
+    "text": "This is a mini quarto document with text and some R code.\n\nin RStudio, click “Render” at the top\nin VScode, click the Preview button (topright)\n\nThis will execute the code chunks and weave together the text, code and output.\nIn RStudio, I recommend to set (Cog symbol)\n- Preview in Viewer Pane\n- and (personal preference) Chunk Output in Console.\n\npairs(iris[, 1:4], main=\"Anderson's Iris Data\",\n      col=c(\"orange\", \"salmon\", \"lightblue\")[unclass(iris$Species)], \n      pch=16, cex=1.5, lower.panel=NULL, las=1)\n\n\n\n\n\n\n\n\nMore in lesson i.2, specifically the homework."
+  },
+  {
+    "objectID": "install/5a_check_quarto.html#section-title",
+    "href": "install/5a_check_quarto.html#section-title",
+    "title": "check_quarto",
+    "section": "",
+    "text": "This is a mini quarto document with text and some R code.\n\nin RStudio, click “Render” at the top\nin VScode, click the Preview button (topright)\n\nThis will execute the code chunks and weave together the text, code and output.\nIn RStudio, I recommend to set (Cog symbol)\n- Preview in Viewer Pane\n- and (personal preference) Chunk Output in Console.\n\npairs(iris[, 1:4], main=\"Anderson's Iris Data\",\n      col=c(\"orange\", \"salmon\", \"lightblue\")[unclass(iris$Species)], \n      pch=16, cex=1.5, lower.panel=NULL, las=1)\n\n\n\n\n\n\n\n\nMore in lesson i.2, specifically the homework."
+  },
+  {
+    "objectID": "install/5a_check_quarto.html#diagnostics-for-5c_check_quarto_python.qmd",
+    "href": "install/5a_check_quarto.html#diagnostics-for-5c_check_quarto_python.qmd",
+    "title": "check_quarto",
+    "section": "Diagnostics for 5c_check_quarto_python.qmd",
+    "text": "Diagnostics for 5c_check_quarto_python.qmd\n\nreticulate::py_config()\n\npython:         C:/Users/Berry/Documents/.virtualenvs/r-reticulate/Scripts/python.exe\nlibpython:      C:/Users/Berry/AppData/Local/r-reticulate/r-reticulate/pyenv/pyenv-win/versions/3.13.2/python313.dll\npythonhome:     C:/Users/Berry/Documents/.virtualenvs/r-reticulate\nversion:        3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/Users/Berry/Documents/.virtualenvs/r-reticulate/Lib/site-packages/numpy\nnumpy_version:  2.4.2"
+  }
+]
