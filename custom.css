@@ -16,6 +16,7 @@
   margin: 0.1em 0 !important;
   font-size: 0.75em;
 }
+
 /* ---- HPI logo top-right, always visible ---- */
 .hpi-logo {
   position: fixed !important;
@@ -27,37 +28,23 @@
   pointer-events: none;
 }
 
-/* ── Back-link to course overview ── */
-
-/* Revealjs slides: fixed top-left, mirroring logo height */
-a.back-link {
-  position: fixed;
-  top: 8px;
-  left: 14px;
-  z-index: 99999;
-  font-size: 0.6em;
-  line-height: 36px;
-  color: #999;
-  text-decoration: none;
+/* ---- course overview link, just left of logo ---- */
+.course-link {
+  position: fixed !important;
+  top: 8px !important;
+  right: 10px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  transform: translateX(calc(-100% - 12px));
+  z-index: 99999 !important;
+  font-size: 0.55em;
   font-family: sans-serif;
-}
-
-a.back-link:hover {
-  color: #333;
-  text-decoration: underline;
-}
-
-/* Plain HTML pages (3_installation.html etc.) */
-p.back-link {
-  margin: 0.4em 0 1.2em 0;
-  font-size: 0.9em;
-}
-
-p.back-link a {
-  color: #666;
+  color: #888;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-p.back-link a:hover {
+.course-link:hover {
+  color: #333;
   text-decoration: underline;
 }
