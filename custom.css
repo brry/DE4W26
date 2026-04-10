@@ -1,0 +1,28 @@
+/* ---- tighten slide layout ---- */
+.reveal .slides section {
+  padding-top: 0 !important;
+  top: 0 !important;
+}
+.reveal h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0.15em !important;
+  font-size: 1.1em !important;
+}
+.reveal ul, .reveal ol {
+  margin-top: 0 !important;
+  font-size: 0.75em;
+}
+.reveal p {
+  margin: 0.1em 0 !important;
+  font-size: 0.75em;
+}
+/* ---- HPI logo top-right, always visible ---- */
+.hpi-logo {
+  position: fixed !important;
+  top: 8px !important;
+  right: 10px !important;
+  height: 36px !important;
+  width: auto !important;
+  z-index: 99999 !important;
+  pointer-events: none;
+}
