@@ -82,6 +82,7 @@ in descending order of importance:
 - Otherwise:
 - Use ![](externalfig/vscodelogo.png){style="height:2em;vertical-align:middle;"} for Python
 - Use ![](externalfig/RStudioLogo.png){style="height:2em;vertical-align:middle;"} for R
+- software installation guide in separate file [3_installation.html](3_installation.html)
 
 ---
 
