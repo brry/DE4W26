@@ -1,8 +1,9 @@
 ---
-title: "DE4W26 – Data Engineering for Wearables"
+title: "DE4W26 – Data engineering for wearables"
 ---
 
-Tutorial sessions, supportive to the moodle course.
+Tutorial sessions, supportive to the moodle course.  
+Repo website [source code](https://github.com/brry/DE4W26)
 
 | Date | Topic |
 |------|-------|
