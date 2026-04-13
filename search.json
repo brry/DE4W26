@@ -11,14 +11,14 @@
     "href": "index.html",
     "title": "DE4W26 – Data engineering for wearables",
     "section": "",
-    "text": "Tutorial sessions, supportive to the moodle course.\nRepo website source code\n\n\n\nDate\nTopic\n\n\n\n\n2026-04-14\ntbd\n\n\n2026-04-21\ntbd\n\n\n2026-04-28\nPython, R, IDE, installation: slides, guide\n\n\n2026-05-05\ngit + quarto: slides, homework\n\n\n2026-05-12\npractical git + markdown usage, data science pipeline\n\n\n2026-05-19\ntbd"
+    "text": "exercise sessions tuesdays 9:15-10:45 in G2.U.10 (Campus III, Digital Health Center, basement floor).\nRepo website source code\n\n\n\nDate\nTopic\n\n\n\n\n2026-04-14\nno exercise session\n\n\n2026-04-21\ntbd\n\n\n2026-04-28\nPython, R, IDE, installation: slides, guide\n\n\n2026-05-05\ngit + quarto: slides, homework\n\n\n2026-05-12\npractical git + markdown usage, data science pipeline\n\n\n2026-05-19\ntbd"
   },
   {
     "objectID": "4_practice.html",
     "href": "4_practice.html",
     "title": "Data engineering for wearables quarto demo",
     "section": "",
-    "text": "← DE4W tutorial overview\nImplement the ideas below that seem useful to you. Keep your changes local (don’t push to the online repo).\nFurther ideas"
+    "text": "← DE4W exercises overview\nImplement the ideas below that seem useful to you. Keep your changes local (don’t push to the online repo).\nFurther ideas"
   },
   {
     "objectID": "4_practice.html#check-package-availability",
@@ -53,61 +53,61 @@
     "href": "4_practice.html#summary-statistics",
     "title": "Data engineering for wearables quarto demo",
     "section": "Summary statistics",
-    "text": "Summary statistics\n\n# Calculate and display some basic statistics\nprint(\"\\n=== Summary Statistics for Temperature ===\")\n\n\n=== Summary Statistics for Temperature ===\n\ntemp_stats = clim_py['TMK.Lufttemperatur'].describe()\nprint(temp_stats)\n\ncount    550.000000\nmean       8.548182\nstd        7.340852\nmin       -8.000000\n25%        3.325000\n50%        8.300000\n75%       13.775000\nmax       29.200000\nName: TMK.Lufttemperatur, dtype: float64"
+    "text": "Summary statistics\n\n# Calculate and display some basic statistics\nprint(\"\\n=== Summary Statistics for Temperature ===\")\n\n\n=== Summary Statistics for Temperature ===\n\ntemp_stats = clim_py['TMK.Lufttemperatur'].describe()\nprint(temp_stats)\n\ncount    550.000000\nmean       8.503636\nstd        7.331643\nmin       -8.000000\n25%        3.325000\n50%        8.200000\n75%       13.700000\nmax       29.200000\nName: TMK.Lufttemperatur, dtype: float64"
   },
   {
     "objectID": "3_installation.html",
     "href": "3_installation.html",
     "title": "",
     "section": "",
-    "text": "← DE4W tutorial overview\n\nSoftware installation guide\nfor ‘Data engineering for wearables’\nbased on instructions for Fundamentals of Programming\nFor data engineering pipelines, you have a lot of software to install.\nIt’s a bit much at once, but it will be worth it!\nAny improvements to this guide are very welcome!\nJump to R, Git, Python, VScode, qmd, Misc\n\nR\n\nStep 1a: install R + RStudio, change the Rdata settings\nStep 1b: check if R is on the PATH and has a version &gt; 4.3.x.\n\n\n\nGit\n\nStep 2a: in a sensible (easy to reach) location on your computer, create a folder for this course. Use a short expressive name like DataEngineeringWearables. Do not use spaces in file/folder names, see good practices.\nStep 2b: install git, including the SSH key setup.\nIf you already have a personal github account, use that :)\nStep 2c: follow the use git section to download this repo into your main course folder (step 2a).\nStep 2d: run install/2d_install_Rpackages.R. Tip: Use the Files pane (RStudio bottom right) to select and open the file.\n\nFrom now on, keyboard shortcuts with CTRL mean CMD on MacOS.\n\n\nPython\n\nStep 3a: check if Python is installed:\n\nin a terminal (see step 1b), type python\nif found with a version 3.9+, type quit or quit() and proceed to step 3c.\nif not found, open the file install/3a_check_python_installed.py with any IDE.\nrun it as instructed inside.\nsee if you get a printout with a version &gt; 3.9.\nif yes, skip step 3b. You do NOT want several versions of Python installed.\n\nStep 3b: if not yet installed, install Python with one of\n\nstandalone installation: Python, hints on Windows\ninstallation via R (way easier, especially on Mac): run install/3b_install_python.R line by line\n\nStep 3c: install Python modules:\n\nif installed via reticulate, in an R console (e.g. in RStudio), run\nreticulate::py_install(c(\"numpy\", \"pandas\", \"matplotlib\"))\nelse, run in the terminal (step 1b):\npip install numpy pandas matplotlib (pip3 on Mac)\n\nStep 3d: run install/3d_check_python_setup.py\n\n\n\nVScode\nOn Berry’s behalf, this step is optional. I will demo everything in RStudio.\n\nStep 4a: install VScode, then\n\nin the Explorer Tab CTRL + SHIFT + E, open the main course folder from step 2a.\nwhen prompted: manage restricted mode - add folder, click “trust”\nopen the settings (CTRL + ,), search “workbench editor enable preview” and uncheck the box\n\nStep 4b: disable telemetry if you don’t want to send data to Micro$oft:\n\nopen the Settings (CTRL + ,), search “Telemetry level”, set to “off”\nopen the Command Palette (CTRL + SHIFT + P), search “Configure Runtime Arguments” and in the argv.json file, change the value for “enable-crash-reporter” to false, restart VScode\n\nStep 4c: run R scripts in VScode:\n\nopen the file install/4c_set_cran_mirror.R (Explorer Tab CTRL + SHIFT + E)\ninstall the R extension when prompted (or manually under Extensions with CTRL + SHIFT + X)\nrun the file and (as instructed there), edit and save the .Rprofile file\n\nStep 4d: run Python scripts in VScode:\n\nopen install/3d_check_python_setup.py (don’t run it yet)\ninstall the Python extension when prompted (or manually)\nopen the Settings (CTRL + ,), search “execin”, check the box for “Python &gt; Terminal: execute in file dir” (Source)\nnow run the file as instructed inside.\n\nStep 4e: customize keyboard shortcuts, suggestions as in RStudio.\n\npress CTRL + K + S (or click the cog wheel at the bottom left).\nset each wanted shortcut, then rightclick -&gt; “show same keybindings” to deal with duplicates.\n\nsearch for the action e.g. with “python run” or “comment”\n\n\n\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nPython: Run Selection/Line in Python Terminal\nCTRL + ENTER\n\n\nPython: Run Python File in Terminal\nCTRL + SHIFT + S\n\n\nToggle Line Comment andToggle Block Comment\nCTRL + SHIFT + C\n\n\nDelete Line\nCTRL + D\n\n\nDuplicate Selection\nCTRL + SHIFT + D\n\n\n\n\n\n\nqmd\n\nStep 5a: run quarto markdown scripts in VScode:\n\nopen install/5a_check_quarto.qmd\ninstall the Quarto extension when prompted (or manually)\nrender (a.k.a. compile) the file as instructed inside\n\nStep 5b: open install/5a_check_quarto.qmd in RStudio\n\nrender as instructed\n\nStep 5c: open install/5c_check_quarto_python.qmd in RStudio\n\nrun code chunks as instructed\n\n\n\n\nMisc\n\nStep 6: housekeeping:\n\non Windows: in the File explorer, click the “View” tab , then “Show” and check the boxes for “File name extensions” and “Hidden items”\non Mac: in any Finder folder, press CMD + Shift + . to show hidden files\n\n\nYou made it through! 🎉\nNow you’re set up for the rest of the course (and beyond).\nAgain: improvements to this guide are very welcome!"
+    "text": "← DE4W exercises overview\n\nSoftware installation guide\nfor ‘Data engineering for wearables’\nbased on instructions for Fundamentals of Programming\nFor data engineering pipelines, you have a lot of software to install.\nIt’s a bit much at once, but it will be worth it!\nAny improvements to this guide are very welcome!\nJump to R, Git, Python, VScode, qmd, Misc\n\nR\n\nStep 1a: install R + RStudio, change the Rdata settings\nStep 1b: check if R is on the PATH and has a version &gt; 4.3.x.\n\n\n\nGit\n\nStep 2a: in a sensible (easy to reach) location on your computer, create a folder for this course. Use a short expressive name like DataEngineeringWearables. Do not use spaces in file/folder names, see good practices.\nStep 2b: install git, including the SSH key setup.\nIf you already have a personal github account, use that :)\nStep 2c: follow the use git section to download this repo into your main course folder (step 2a).\nStep 2d: run install/2d_install_Rpackages.R. Tip: Use the Files pane (RStudio bottom right) to select and open the file.\n\nFrom now on, keyboard shortcuts with CTRL mean CMD on MacOS.\n\n\nPython\n\nStep 3a: check if Python is installed:\n\nin a terminal (see step 1b), type python\nif found with a version 3.9+, type quit or quit() and proceed to step 3c.\nif not found, open the file install/3a_check_python_installed.py with any IDE.\nrun it as instructed inside.\nsee if you get a printout with a version &gt; 3.9.\nif yes, skip step 3b. You do NOT want several versions of Python installed.\n\nStep 3b: if not yet installed, install Python with one of\n\nstandalone installation: Python, hints on Windows\ninstallation via R (way easier, especially on Mac): run install/3b_install_python.R line by line\n\nStep 3c: install Python modules:\n\nif installed via reticulate, in an R console (e.g. in RStudio), run\nreticulate::py_install(c(\"numpy\", \"pandas\", \"matplotlib\"))\nelse, run in the terminal (step 1b):\npip install numpy pandas matplotlib (pip3 on Mac)\n\nStep 3d: run install/3d_check_python_setup.py\n\n\n\nVScode\nOn Berry’s behalf, this step is optional. I will demo everything in RStudio.\n\nStep 4a: install VScode, then\n\nin the Explorer Tab CTRL + SHIFT + E, open the main course folder from step 2a.\nwhen prompted: manage restricted mode - add folder, click “trust”\nopen the settings (CTRL + ,), search “workbench editor enable preview” and uncheck the box\n\nStep 4b: disable telemetry if you don’t want to send data to Micro$oft:\n\nopen the Settings (CTRL + ,), search “Telemetry level”, set to “off”\nopen the Command Palette (CTRL + SHIFT + P), search “Configure Runtime Arguments” and in the argv.json file, change the value for “enable-crash-reporter” to false, restart VScode\n\nStep 4c: run R scripts in VScode:\n\nopen the file install/4c_set_cran_mirror.R (Explorer Tab CTRL + SHIFT + E)\ninstall the R extension when prompted (or manually under Extensions with CTRL + SHIFT + X)\nrun the file and (as instructed there), edit and save the .Rprofile file\n\nStep 4d: run Python scripts in VScode:\n\nopen install/3d_check_python_setup.py (don’t run it yet)\ninstall the Python extension when prompted (or manually)\nopen the Settings (CTRL + ,), search “execin”, check the box for “Python &gt; Terminal: execute in file dir” (Source)\nnow run the file as instructed inside.\n\nStep 4e: customize keyboard shortcuts, suggestions as in RStudio.\n\npress CTRL + K + S (or click the cog wheel at the bottom left).\nset each wanted shortcut, then rightclick -&gt; “show same keybindings” to deal with duplicates.\n\nsearch for the action e.g. with “python run” or “comment”\n\n\n\n\n\n\n\n\nAction\nShortcut\n\n\n\n\nPython: Run Selection/Line in Python Terminal\nCTRL + ENTER\n\n\nPython: Run Python File in Terminal\nCTRL + SHIFT + S\n\n\nToggle Line Comment andToggle Block Comment\nCTRL + SHIFT + C\n\n\nDelete Line\nCTRL + D\n\n\nDuplicate Selection\nCTRL + SHIFT + D\n\n\n\n\n\n\nqmd\n\nStep 5a: run quarto markdown scripts in VScode:\n\nopen install/5a_check_quarto.qmd\ninstall the Quarto extension when prompted (or manually)\nrender (a.k.a. compile) the file as instructed inside\n\nStep 5b: open install/5a_check_quarto.qmd in RStudio\n\nrender as instructed\n\nStep 5c: open install/5c_check_quarto_python.qmd in RStudio\n\nrun code chunks as instructed\n\n\n\n\nMisc\n\nStep 6: housekeeping:\n\non Windows: in the File explorer, click the “View” tab , then “Show” and check the boxes for “File name extensions” and “Hidden items”\non Mac: in any Finder folder, press CMD + Shift + . to show hidden files\n\n\nYou made it through! 🎉\nNow you’re set up for the rest of the course (and beyond).\nAgain: improvements to this guide are very welcome!"
   },
   {
     "objectID": "3_software.html#welcome",
     "href": "3_software.html#welcome",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "Welcome",
     "text": "Welcome\n\nBerry     \n2008–2017 Geo-ecologie @ Potsdam University\n“accidentally” became an -fan\nR-packages , community , training & consulting \nSince 2019 lecturer @ HPI (chair Bert Arnrich)\nSince 2021 also -teacher\nMarried, new father\nRenovating our house (shared with friends)\nPlay ice hockey whenever the lake is frozen\nActive in erlebt Potsdam"
   },
   {
     "objectID": "3_software.html#why-learn-python-and-r",
     "href": "3_software.html#why-learn-python-and-r",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "Why learn Python and R",
-    "text": "Why learn Python and R\n\nLanguages for data analysis / visualization and statistics\nWidely used in research and business\nFree, open source (accountable, reproducible, expandable)\nLarge user community (many methods)\nInterpreted language (no compilation)\nHigh-level (readable for humans)\nDynamic typing and binding (data type checked at run-time)\nCoding makes your work efficient, productive and replicable"
+    "text": "Why learn Python and R\n\nLanguages for data analysis / visualization and statistics\nWidely used in research and business\nFree, open source (accountable, reproducible, expandable)\nLarge user community (many methods)\nInterpreted language (no compilation)\nHigh-level (readable for humans)\nDynamic typing and binding (data type checked at run-time)\nCoding makes your work efficient, productive and replicable\n\n\n–&gt; Different course formats at brry.github.io/course"
   },
   {
     "objectID": "3_software.html#when-to-use-which-language",
     "href": "3_software.html#when-to-use-which-language",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "When to use which language",
     "text": "When to use which language\n\nUse what you’re most comfortable with!\nUse what your team uses\nChoose by strengths (ease of use, choice of packages):\n\nPython: Machine Learning\nR: stats / visualisation / data analysis\n(both can do all of this)\n\nChoose by programming philosophy:\n\nPython: object-oriented (methods bundled with data)\nR: functional (functions return reproducible results)\n\nChoose by implementation details:\n\nPython: informative error messages, systematic function naming\nR: easy install, easy REPL, F1 for help, systematic code syntax"
   },
   {
     "objectID": "3_software.html#good-coding-practices",
     "href": "3_software.html#good-coding-practices",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "Good coding practices",
     "text": "Good coding practices\n\nDRY: Don’t repeat yourself\nDo not maintain multiple variants of code!\nDuplicate code → function / vectorize / loop\nCode should be clear, simple, modular, documented, fast, tested\nMany concrete tips at brry.github.io/course/good-practice.html"
   },
   {
     "objectID": "3_software.html#ides",
     "href": "3_software.html#ides",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "IDEs",
     "text": "IDEs\nIntegrated Development Environment\n\nIf you already like one, use it!\nOtherwise:\nUse  for Python\nUse  for R\nsoftware installation guide in separate file 3_installation.html"
   },
   {
     "objectID": "3_software.html#overview-vs-code",
     "href": "3_software.html#overview-vs-code",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "Overview: VS Code",
     "text": "Overview: VS Code\n\n\nRun script with play button (or custom keyboard shortcut)\nRun line / selection with SHIFT / CTRL + ENTER\nType quit() to get out of REPL mode (Read–eval–print loop)"
   },
   {
     "objectID": "3_software.html#overview-rstudio",
     "href": "3_software.html#overview-rstudio",
-    "title": "DE4W tutorial: Software",
+    "title": "DE4W exercise: Software",
     "section": "Overview: RStudio",
     "text": "Overview: RStudio"
   },

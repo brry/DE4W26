@@ -1,5 +1,5 @@
 ---
-title: "DE4W tutorial: Software"
+title: "DE4W exercise: Software"
 format:
   revealjs:
     self-contained: true
@@ -40,6 +40,10 @@ format:
 - High-level (readable for humans)
 - Dynamic typing and binding (data type checked at run-time)
 - Coding makes your work efficient, productive and replicable
+
+. . .
+
+--> Different course formats at [brry.github.io/course](https://brry.github.io/course/)
 
 ---
 

@@ -1,4 +1,4 @@
-[← DE4W tutorial overview](index.html)
+[← DE4W exercises overview](index.html)
 
 ### Software installation guide
 

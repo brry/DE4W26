@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
 
   var link = document.createElement("a");
   link.href = "index.html";
-  link.textContent = "← DE4W tutorial overview";
+  link.textContent = "← DE4W exercises overview";
   link.className = "course-link";
   document.body.appendChild(link);
 });
