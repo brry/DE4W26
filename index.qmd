@@ -2,13 +2,13 @@
 title: "DE4W26 – Data engineering for wearables"
 ---
 
-exercise sessions tuesdays 9:15-10:45 in G2.U.10 (Campus III, Digital Health Center, basement floor).  
+**Tech stack exercise sessions**
+
+*tuesdays 9:15-10:45 in G2.U.10 (Campus III, Digital Health Cluster, basement floor)*  
 Repo website [source code](https://github.com/brry/DE4W26)
 
 | Date | Topic |
 |------|-------|
-| 2026-04-14 | no exercise session |
-| 2026-04-21 | tbd |
 | 2026-04-28 | Python, R, IDE, installation: [slides](3_software.html), [guide](3_installation.html) |
 | 2026-05-05 | git + quarto: [slides](4_publishing.html), [homework](4_practice.html) |
 | 2026-05-12 | practical git + markdown usage, data science pipeline |
