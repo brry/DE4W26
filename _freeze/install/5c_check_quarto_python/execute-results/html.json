@@ -3,9 +3,7 @@
   "result": {
     "engine": "knitr",
     "markdown": "---\ntitle: \"check_quarto_python\"\nformat:\n  html:\n    embed-resources: true\n---\n\nTesting python chunk execution\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(reticulate)\n```\n:::\n\n\n\n::: {.cell}\n\n```{.python .cell-code}\ntesting_object = 44\n```\n:::\n\n\n\n::: {.cell}\n\n```{.python .cell-code}\ntesting_object = testing_object + 11\n```\n:::\n\n\nIn RStudio in the following chunk, click on the arrow to \"run all chunks above\",\nthen inside the chunk double-click on `testing_object` to mark it \nand hit CTRL/CMD + ENTER to see if you can directly see 55.\n\n\n::: {.cell}\n\n```{.python .cell-code}\ntesting_object\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n55\n```\n\n\n:::\n:::\n\n\nIf this is not the case, check this [issue](https://github.com/rstudio/rstudio/issues/17196) on Mac for a workaround.\n",
-    "supporting": [
-      "5c_check_quarto_python_files"
-    ],
+    "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
