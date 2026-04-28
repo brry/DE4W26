@@ -9,7 +9,7 @@ Repo website [source code](https://github.com/brry/DE4W26)
 
 | Date | Topic |
 |------|-------|
-| 2026-04-28 | Python, R, IDE, installation: [slides](3_software.html), [guide](3_installation.html) |
-| 2026-05-05 | git + quarto: [slides](4_publishing.html), [homework](4_practice.html) |
-| 2026-05-12 | practical git + markdown usage, data science pipeline |
-| 2026-05-19 | tbd |
+| 2026-05-05 | Python, R, IDE, installation: [slides](3_software.html), [guide](3_installation.html) |
+| 2026-05-12 | git + quarto: [slides](4_publishing.html), [homework](4_practice.html) |
+| 2026-05-19 | practical git + markdown usage, data science pipeline |
+| 2026-05-26 | tbd |

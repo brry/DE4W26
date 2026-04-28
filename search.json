@@ -88,7 +88,7 @@
     "href": "index.html",
     "title": "DE4W26 – Data engineering for wearables",
     "section": "",
-    "text": "Tech stack exercise sessions\ntuesdays 9:15-10:45 in G2.U.10 (Campus III, Digital Health Cluster, basement floor)\nRepo website source code\n\n\n\nDate\nTopic\n\n\n\n\n2026-04-28\nPython, R, IDE, installation: slides, guide\n\n\n2026-05-05\ngit + quarto: slides, homework\n\n\n2026-05-12\npractical git + markdown usage, data science pipeline\n\n\n2026-05-19\ntbd"
+    "text": "Tech stack exercise sessions\ntuesdays 9:15-10:45 in G2.U.10 (Campus III, Digital Health Cluster, basement floor)\nRepo website source code\n\n\n\nDate\nTopic\n\n\n\n\n2026-05-05\nPython, R, IDE, installation: slides, guide\n\n\n2026-05-12\ngit + quarto: slides, homework\n\n\n2026-05-19\npractical git + markdown usage, data science pipeline\n\n\n2026-05-26\ntbd"
   },
   {
     "objectID": "install/5c_check_quarto_python.html",
