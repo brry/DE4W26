@@ -11,7 +11,7 @@
     "href": "4_exercise.html#check-package-availability",
     "title": "Data engineering for wearables quarto demo",
     "section": "Check package availability",
-    "text": "Check package availability\n\nimport matplotlib, pandas\n\n\nif(!requireNamespace(\"rdwd\", quietly=TRUE))\n    install.packages(\"rdwd\")\nrdwd::updateRdwd()\n\nrdwd is up to date, compared to github.com/brry/rdwd. Version 1.9.12 (2026-03-30)"
+    "text": "Check package availability\n\nimport matplotlib, pandas\n\n\nif(!requireNamespace(\"rdwd\", quietly=TRUE))\n    install.packages(\"rdwd\")\nrdwd::updateRdwd(vignette=FALSE)\n\nrdwd is up to date, compared to github.com/brry/rdwd. Version 1.9.12 (2026-03-30)"
   },
   {
     "objectID": "4_exercise.html#get-weather-data",
@@ -39,7 +39,7 @@
     "href": "4_exercise.html#summary-statistics",
     "title": "Data engineering for wearables quarto demo",
     "section": "Summary statistics",
-    "text": "Summary statistics\n\n# Calculate and display some basic statistics\nprint(\"\\n=== Summary Statistics for Temperature ===\")\n\n\n=== Summary Statistics for Temperature ===\n\ntemp_stats = clim_py['TMK.Lufttemperatur'].describe()\nprint(temp_stats)\n\ncount    550.000000\nmean       8.491818\nstd        7.326556\nmin       -8.000000\n25%        3.325000\n50%        8.200000\n75%       13.700000\nmax       29.200000\nName: TMK.Lufttemperatur, dtype: float64"
+    "text": "Summary statistics\n\n# Calculate and display some basic statistics\nprint(\"\\n=== Summary Statistics for Temperature ===\")\n\n\n=== Summary Statistics for Temperature ===\n\ntemp_stats = clim_py['TMK.Lufttemperatur'].describe()\nprint(temp_stats)\n\ncount    550.000000\nmean       8.518545\nstd        7.358740\nmin       -8.000000\n25%        3.325000\n50%        8.200000\n75%       13.800000\nmax       29.200000\nName: TMK.Lufttemperatur, dtype: float64"
   },
   {
     "objectID": "3_publishing.html#use-git-and-github",
