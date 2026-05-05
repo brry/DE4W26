@@ -1,0 +1,32 @@
+---
+title: "q_demo_pres"
+author: "Berry"
+format:
+  revealjs:
+    chalkboard: true
+editor: visual
+incremental: false
+---
+
+## slide 1
+
+*some* **text**
+
+```{r}
+#| label: random_walk
+#| eval: true
+#| echo: true
+#| cache: true
+plot(cumsum(rnorm(3000)), type="l", col="red")
+```
+
+. . . 
+
+more text
+
+## slide 2
+
+- stuff
+- more things
+- nice things
+- I'm tired 

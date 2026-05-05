@@ -1,0 +1,17 @@
+---
+title: "q_demo"
+format: html
+editor: visual
+---
+
+## main title
+
+
+stuff as _text_
+
+```{r}
+#| label: sepal_hist
+#| echo: false
+hist(iris$Sepal.Length, col="red")
+```
+
