@@ -1,13 +1,12 @@
 ---
 title: "q_demo"
 format: html
-editor: visual
+editor: source
 ---
 
 ## main title
 
-
-stuff as _text_
+markdown formatted *text*
 
 ```{r}
 #| label: sepal_hist
@@ -15,3 +14,5 @@ stuff as _text_
 hist(iris$Sepal.Length, col="red")
 ```
 
+In Rstudio, to see a template when using File -> New File -> Quarto document/presentation, be outside the DE4W26 repo.  
+The website type in `_quarto.yml` sets the template within the Rproject to be an empty one.

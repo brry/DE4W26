@@ -6,3 +6,13 @@
 **/*.quarto_ipynb
 install/*.html
 .positai
+
+demo_pres.html
+demo_pres_cache/
+demo_pres_files/
+
+demo_article_files/
+demo_article.html
+
+_freeze/demo_article/
+_freeze/demo_pres/

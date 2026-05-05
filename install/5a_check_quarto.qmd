@@ -25,7 +25,7 @@ pairs(iris[, 1:4], main="Anderson's Iris Data",
 
 ```
 
-More in lesson i.2, specifically the homework.
+More in lesson 3_publishing, specifically the homework.
 
 
 ## Diagnostics for 5c_check_quarto_python.qmd

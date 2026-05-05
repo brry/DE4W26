@@ -80,8 +80,8 @@ Write a short informative message (why, not what) and press **Commit**.
 
 ## Quarto presentations
 
--   `format: revealjs`, &ensp; `incremental: true`, &ensp; `echo: true`
--   chalkboard, embed-resources
+-   `format: revealjs`, &ensp; `echo: true`, &ensp; `incremental: true`
+-   `embed-resources: true`, &ensp; `chalkboard: true`
 -   visual editor
 -   `## slide title`
 -   `. . .` (with blank lines) for animation

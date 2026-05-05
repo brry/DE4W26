@@ -4,7 +4,7 @@ author: "Berry"
 format:
   revealjs:
     chalkboard: true
-editor: visual
+editor: source
 incremental: true
 ---
 
@@ -21,12 +21,12 @@ Have the Rstudio Presentation window large enough for the graph to appear!
 plot(cumsum(rnorm(3000)), type="l", col="red")
 ```
 
-. . . 
+. . .
 
 more text, always animated, even if `incremental: false`
 
 ## slide 2
 
-- some things
-- nice things
-- that show up incrementally (if set in the yaml header)
+-   some things
+-   nice things
+-   that show up incrementally (if set in the yaml header)
