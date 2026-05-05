@@ -1,8 +1,8 @@
 {
-  "hash": "aabb01036a9c63e177d445a92105308b",
+  "hash": "068766f33f7d31b9d4d576a37d18aea6",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"q_demo_pres\"\nauthor: \"Berry\"\nformat:\n  revealjs:\n    chalkboard: true\neditor: visual\nincremental: false\n---\n\n## slide 1\n\n*some* **text**\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(cumsum(rnorm(3000)), type=\"l\", col=\"red\")\n```\n\n::: {.cell-output-display}\n![](demo_pres_files/figure-revealjs/random_walk-1.png){width=960}\n:::\n:::\n\n\n. . . \n\nmore text\n\n## slide 2\n\n- stuff\n- more things\n- nice things\n- I'm tired \n",
+    "markdown": "---\ntitle: \"q_demo_pres\"\nauthor: \"Berry\"\nformat:\n  revealjs:\n    chalkboard: true\neditor: visual\nincremental: true\n---\n\n## slide 1\n\nsome **bold** or *italic* text with `code` formatting  \nline break with two spaces at the end  \nHave the Rstudio Presentation window large enough for the graph to appear!\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(cumsum(rnorm(3000)), type=\"l\", col=\"red\")\n```\n\n::: {.cell-output-display}\n![](demo_pres_files/figure-revealjs/random_walk-1.png){width=960}\n:::\n:::\n\n\n. . . \n\nmore text, always animated, even if `incremental: false`\n\n## slide 2\n\n- some things\n- nice things\n- that show up incrementally (if set in the yaml header)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

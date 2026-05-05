@@ -211,22 +211,23 @@ Berry
 </section>
 <section id="slide-1" class="slide level2">
 <h2>slide 1</h2>
-<p><em>some</em> <strong>text</strong></p>
+<p>some <strong>bold</strong> or <em>italic</em> text with <code>code</code> formatting<br>
+line break with two spaces at the end<br>
+Have the Rstudio Presentation window large enough for the graph to appear!</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">plot</span>(<span class="fu">cumsum</span>(<span class="fu">rnorm</span>(<span class="dv">3000</span>)), <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="demo_pres_files/figure-revealjs/random_walk-1.png" width="960" class="r-stretch"><div class="fragment">
-<p>more text</p>
+<p>more text, always animated, even if <code>incremental: false</code></p>
 </div>
 </section>
 <section id="slide-2" class="slide level2">
 <h2>slide 2</h2>
 <ul>
-<li>stuff</li>
-<li>more things</li>
-<li>nice things</li>
-<li>I’m tired</li>
+<li class="fragment">some things</li>
+<li class="fragment">nice things</li>
+<li class="fragment">that show up incrementally (if set in the yaml header)</li>
 </ul>
 
 

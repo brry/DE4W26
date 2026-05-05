@@ -5,16 +5,17 @@ format:
   revealjs:
     chalkboard: true
 editor: visual
-incremental: false
+incremental: true
 ---
 
 ## slide 1
 
-*some* **text**
+some **bold** or *italic* text with `code` formatting  
+line break with two spaces at the end  
+Have the Rstudio Presentation window large enough for the graph to appear!
 
 ```{r}
 #| label: random_walk
-#| eval: true
 #| echo: true
 #| cache: true
 plot(cumsum(rnorm(3000)), type="l", col="red")
@@ -22,11 +23,10 @@ plot(cumsum(rnorm(3000)), type="l", col="red")
 
 . . . 
 
-more text
+more text, always animated, even if `incremental: false`
 
 ## slide 2
 
-- stuff
-- more things
+- some things
 - nice things
-- I'm tired 
+- that show up incrementally (if set in the yaml header)

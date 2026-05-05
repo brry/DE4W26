@@ -25,14 +25,14 @@
     "href": "demo_pres.html#slide-1",
     "title": "q_demo_pres",
     "section": "slide 1",
-    "text": "slide 1\nsome text\n\nplot(cumsum(rnorm(3000)), type=\"l\", col=\"red\")\n\n\n\nmore text"
+    "text": "slide 1\nsome bold or italic text with code formatting\nline break with two spaces at the end\nHave the Rstudio Presentation window large enough for the graph to appear!\n\nplot(cumsum(rnorm(3000)), type=\"l\", col=\"red\")\n\n\n\nmore text, always animated, even if incremental: false"
   },
   {
     "objectID": "demo_pres.html#slide-2",
     "href": "demo_pres.html#slide-2",
     "title": "q_demo_pres",
     "section": "slide 2",
-    "text": "slide 2\n\nstuff\nmore things\nnice things\nI’m tired"
+    "text": "slide 2\n\nsome things\nnice things\nthat show up incrementally (if set in the yaml header)"
   },
   {
     "objectID": "1_software.html#welcome",
