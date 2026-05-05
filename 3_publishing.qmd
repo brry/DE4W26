@@ -61,7 +61,7 @@ Write a short informative message (why, not what) and press **Commit**.
 
 ## Quarto documents
 
--   Mix code and markdown text
+-   Mix code and markdown text :)
 -   Hassle-free and reproducible reports / presentations / websites
 -   One main file with the single source of truth (SSOT)
 -   Full publishing ecosystem, see [quarto.org](https://quarto.org/)
