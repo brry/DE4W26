@@ -88,6 +88,7 @@ From now on, keyboard shortcuts with `CTRL` mean `CMD` on MacOS.
 - <mark>Step 5a</mark>: run quarto markdown scripts in **VScode**:
   - open *`install/5a_check_quarto.qmd`* 
   - install the Quarto extension when prompted (or manually)
+  - restart VScode
   - render (a.k.a. compile) the file as instructed inside
 - <mark>Step 5b</mark>:  open *`install/5a_check_quarto.qmd`* in **RStudio**
     - render as instructed
