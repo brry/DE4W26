@@ -50,14 +50,14 @@ Jump to [R](#r), [Git](#git), [Python](#python), [VScode](#vscode), [Quarto](#qu
   - Close your terminal and open a new one (see step 1b).
 - <mark>Step 3b</mark>: in the terminal, set your directory:
   - Use Tab for autocomplete or drag the folder into the terminal after `cd  `:
-  - `cd your/path/to/DataEngineeringWearables`  
+  - `cd your/path/to/DataEngineeringWearables/install`  
   - Depending on OS, (maybe with `zsh` instead of `bash` on MacOS), run **one** of:  
   `bash 3b_install_python_mac.sh`  
   `powershell -ExecutionPolicy Bypass -File 3b_install_python_windows.ps1`  
 - <mark>Step 3c</mark>: instruct RStudio to use the venv:
-  - In RStudio, open and run the file *`3c_set_python_rstudio.R`* as instructed inside.
+  - In RStudio, open and run the file *`install/3c_set_python_rstudio.R`* as instructed inside.
 - <mark>Step 3d</mark>: check Python scripts in RStudio:
-  - In RStudio, open and run the file *`3d_check_python_rstudio.py`* as instructed inside.
+  - In RStudio, open and run the file *`install/3d_check_python_rstudio.py`* as instructed inside.
 
 #### VScode
 
@@ -70,9 +70,9 @@ Jump to [R](#r), [Git](#git), [Python](#python), [VScode](#vscode), [Quarto](#qu
   - When prompted, click "trust".
   - *(To signify you should be in the main course folder, `install/` is prepended to the script names from now on)*
 - <mark>Step 4b</mark>: change VScode settings
-  - In **RStudio** (to avoid circular dependencies), open and run the file *`4b_setup_vscode.R`*.
+  - In **RStudio** (to avoid circular dependencies), open and run the file *`install/4b_setup_vscode.R`*.
 - <mark>Step 4c</mark>: check Python scripts in VScode:
-  - In VScode, open and run the file *`fpsetup/4c_check_python_vscode.py`*.
+  - In VScode, open and run the file *`install/4c_check_python_vscode.py`*.
 - <mark>Step 4d</mark>: *optional*: customize keyboard shortcuts, suggestions as in RStudio.
   - Press `CTRL` + `K` + `S` (or click the cog wheel at the bottom left).
   - Set each wanted shortcut, then rightclick -> "show same keybindings" to deal with duplicates.  
@@ -90,9 +90,9 @@ Jump to [R](#r), [Git](#git), [Python](#python), [VScode](#vscode), [Quarto](#qu
 #### Quarto
 
 - <mark>Step 5</mark>: render quarto markdown scripts as instructed inside:
-  - In **VScode**, open *`fpsetup/5a_quarto_vscode.qmd`*
-  - In **RStudio**, open *`fpsetup/5b_quarto_rstudio.qmd`*
-  - In **RStudio**, open *`fpsetup/5c_quarto_python_rstudio.qmd`*
+  - In **VScode**, open *`install/5a_quarto_vscode.qmd`*
+  - In **RStudio**, open *`install/5b_quarto_rstudio.qmd`*
+  - In **RStudio**, open *`install/5c_quarto_python_rstudio.qmd`*
 
 #### Misc
 
