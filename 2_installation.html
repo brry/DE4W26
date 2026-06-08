@@ -93,86 +93,107 @@ based on instructions for <a href="https://brry.github.io/course/">Fundamentals 
 <p>For data engineering pipelines, you have a lot of software to install.<br>
 It’s a bit much at once, but it will be worth it!</p>
 <p>Any improvements to this guide are very welcome!</p>
-<p>Jump to <a href="#r">R</a>, <a href="#git">Git</a>, <a href="#python">Python</a>, <a href="#vscode">VScode</a>, <a href="#qmd">qmd</a>, <a href="#misc">Misc</a></p>
+<p>Jump to <a href="#r">R</a>, <a href="#git">Git</a>, <a href="#python">Python</a>, <a href="#vscode">VScode</a>, <a href="#quarto">Quarto</a>, <a href="#misc">Misc</a></p>
 <section id="r" class="level4">
 <h4 class="anchored" data-anchor-id="r">R</h4>
 <ul>
-<li><mark>Step 1a</mark>: install <a href="https://brry.github.io/course/install.html">R + RStudio</a>, change the Rdata settings</li>
-<li><mark>Step 1b</mark>: check if R is on the <a href="https://brry.github.io/course/path.html">PATH</a> and has a version &gt; 4.3.x.</li>
+<li><mark>Step 1a</mark>: install R:
+<ul>
+<li>Install <a href="https://brry.github.io/course/install.html">R + RStudio</a>.</li>
+<li>Open RStudio and change the Rdata settings as instructed in the previous link.</li>
+<li>Add RStudio to the taskbar/dock if wanted.</li>
+</ul></li>
+<li><mark>Step 1b</mark>: check R:
+<ul>
+<li>Check if R is on the <a href="https://brry.github.io/course/path.html">PATH</a></li>
+<li>and has a version &gt; 4.3.x.</li>
+</ul></li>
 </ul>
 </section>
 <section id="git" class="level4">
 <h4 class="anchored" data-anchor-id="git">Git</h4>
 <ul>
-<li><mark>Step 2a</mark>: in a sensible (easy to reach) location on your computer, create a folder for this course. Use a short expressive name like <code>DataEngineeringWearables</code>. Do not use spaces in file/folder names, see <a href="https://brry.github.io/course/good-practice.html">good practices</a>.</li>
-<li><mark>Step 2b</mark>: install <a href="https://brry.github.io/course/git.html">git</a>, including the SSH key setup.<br>
-If you already have a personal github account, use that :)</li>
-<li><mark>Step 2c</mark>: follow the <a href="https://brry.github.io/course/git.html#use-git">use git</a> section to download <a href="https://github.com/brry/DE4W26">this repo</a> into your main course folder (step 2a).</li>
-<li><mark>Step 2d</mark>: run <em><code>install/2d_install_Rpackages.R</code></em>. Tip: Use the Files pane (RStudio bottom right) to select and open the file.</li>
+<li><mark>Step 2a</mark>: create a course folder:
+<ul>
+<li>In a sensible (easy to reach) location on your computer, create a folder for this course.</li>
+<li>Use a short expressive name without spaces like <code>DataEngineeringWearables</code>!</li>
+<li>Except in step 3b, you do not need your OS file explorer anymore - use the file panel in your IDE!</li>
+</ul></li>
+<li><mark>Step 2b</mark>: install git for version control:
+<ul>
+<li>Install <a href="https://brry.github.io/course/git.html">git</a>, including the SSH key setup.<br>
+</li>
+<li>If you already have a personal github account, use that :)</li>
+</ul></li>
+<li><mark>Step 2c</mark>: download this DE4W26 repo:
+<ul>
+<li>Follow the <a href="https://brry.github.io/course/git.html#use-git">use git</a> section to download <a href="https://github.com/brry/DE4W26">these instructions</a> into your main course folder from step 2a.</li>
+</ul></li>
+<li><mark>Step 2d</mark>: install R packages:
+<ul>
+<li>In the now opened Rstudio instance with <code>DE4W26</code> in the topright,</li>
+<li>use the Files pane (bottom right) to open the file <em><code>install/2d_install_Rpackages.R</code></em>.</li>
+<li>Run it as instructed inside.</li>
+<li>Keep Rstudio opened for step 3c.</li>
+</ul></li>
 </ul>
-<p>From now on, keyboard shortcuts with <code>CTRL</code> mean <code>CMD</code> on MacOS.</p>
+<p><strong>From now on, keyboard shortcuts with <code>CTRL</code> mean <code>CMD</code> on MacOS.</strong></p>
 </section>
 <section id="python" class="level4">
 <h4 class="anchored" data-anchor-id="python">Python</h4>
 <ul>
-<li><mark>Step 3a</mark>: check if Python is installed:
+<li><mark>Step 3a</mark>: install Python with <code>uv</code> (very fast &amp; easy Python package manager):
 <ul>
-<li>in a terminal (see step 1b), type <code>python</code></li>
-<li>if found with a version 3.9+, type <code>quit</code> or <code>quit()</code> and proceed to step 3c.</li>
-<li>if not found, open the file <em><code>install/3a_check_python_installed.py</code></em> with any IDE.</li>
-<li>run it as instructed inside.</li>
-<li>see if you get a printout with a version &gt; 3.9.</li>
-<li>if yes, skip step 3b. You do NOT want several versions of Python installed.</li>
+<li>Install <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> (scroll down for <code>brew</code> and other options).</li>
+<li>Close your terminal and open a new one (see step 1b).</li>
 </ul></li>
-<li><mark>Step 3b</mark>: if not yet installed, install Python with one of
+<li><mark>Step 3b</mark>: in the terminal, set your directory:
 <ul>
-<li>standalone installation: <a href="https://www.python.org/downloads/">Python</a>, hints on <a href="https://docs.python.org/using/windows.html">Windows</a></li>
-<li>installation via R (way easier, especially on Mac): run <em><code>install/3b_install_python.R</code></em> line by line</li>
+<li>Use Tab for autocomplete or drag the folder into the terminal after <code>cd</code>:</li>
+<li><code>cd your/path/to/DataEngineeringWearables</code><br>
+</li>
+<li>Depending on OS, (maybe with <code>zsh</code> instead of <code>bash</code> on MacOS), run <strong>one</strong> of:<br>
+<code>bash 3b_install_python_mac.sh</code><br>
+<code>powershell -ExecutionPolicy Bypass -File 3b_install_python_windows.ps1</code><br>
+</li>
 </ul></li>
-<li><mark>Step 3c</mark>: install Python modules:
+<li><mark>Step 3c</mark>: instruct RStudio to use the venv:
 <ul>
-<li>if installed via reticulate, in an R console (e.g.&nbsp;in RStudio), run<br>
-<code>reticulate::py_install(c("numpy", "pandas", "matplotlib"))</code></li>
-<li>else, run in the terminal (step 1b):<br>
-<code>pip install numpy pandas matplotlib</code> (pip3 on Mac)</li>
+<li>In RStudio, open and run the file <em><code>3c_set_python_rstudio.R</code></em> as instructed inside.</li>
 </ul></li>
-<li><mark>Step 3d</mark>: run <em><code>install/3d_check_python_setup.py</code></em></li>
+<li><mark>Step 3d</mark>: check Python scripts in RStudio:
+<ul>
+<li>In RStudio, open and run the file <em><code>3d_check_python_rstudio.py</code></em> as instructed inside.</li>
+</ul></li>
 </ul>
 </section>
 <section id="vscode" class="level4">
 <h4 class="anchored" data-anchor-id="vscode">VScode</h4>
 <p><em>On Berry’s behalf, this step is optional. I will demo everything in RStudio.</em></p>
 <ul>
-<li><mark>Step 4a</mark>: install <a href="https://code.visualstudio.com/Download">VScode</a>, then
+<li><mark>Step 4a</mark>: install VScode:
 <ul>
-<li>in the Explorer Tab <code>CTRL</code> + <code>SHIFT</code> + <code>E</code>, open the main course folder from step 2a.</li>
-<li>when prompted: manage restricted mode - add folder, click “trust”</li>
-<li>open the settings (<code>CTRL</code> + <code>,</code>), search “workbench editor enable preview” and uncheck the box</li>
+<li>Install <a href="https://code.visualstudio.com/Download">VScode</a> and open it.</li>
+<li>Add it to the taskbar/dock if wanted.</li>
+<li>Open the Explorer Tab with <code>CTRL</code> + <code>SHIFT</code> + <code>E</code>, open the main course folder from step 2a.</li>
+<li>When prompted, click “trust”.</li>
+<li><em>(To signify you should be in the main course folder, <code>install/</code> is prepended to the script names from now on)</em></li>
 </ul></li>
-<li><mark>Step 4b</mark>: disable <a href="https://www.roboleary.net/tools/2022/04/20/vscode-telemetry.html">telemetry</a> if you don’t want to send data to Micro$oft:
+<li><mark>Step 4b</mark>: change VScode settings
 <ul>
-<li>open the Settings (<code>CTRL</code> + <code>,</code>), search “Telemetry level”, set to “off”</li>
-<li>open the Command Palette (<code>CTRL</code> + <code>SHIFT</code> + <code>P</code>), search “Configure Runtime Arguments” and in the argv.json file, change the value for “enable-crash-reporter” to false, restart VScode</li>
+<li>In <strong>RStudio</strong> (to avoid circular dependencies), open and run the file <em><code>4b_setup_vscode.R</code></em>.</li>
 </ul></li>
-<li><mark>Step 4c</mark>: run R scripts in VScode:
+<li><mark>Step 4c</mark>: check Python scripts in VScode:
 <ul>
-<li>open the file <em><code>install/4c_set_cran_mirror.R</code></em> (Explorer Tab <code>CTRL</code> + <code>SHIFT</code> + <code>E</code>)</li>
-<li>install the R extension when prompted (or manually under Extensions with <code>CTRL</code> + <code>SHIFT</code> + <code>X</code>)</li>
-<li>run the file and (as instructed there), edit and save the <code>.Rprofile</code> file</li>
+<li>In VScode, open and run the file <em><code>fpsetup/4c_check_python_vscode.py</code></em>.</li>
 </ul></li>
-<li><mark>Step 4d</mark>: run Python scripts in VScode:
+<li><mark>Step 4d</mark>: <em>optional</em>: customize keyboard shortcuts, suggestions as in RStudio.
 <ul>
-<li>open <em><code>install/3d_check_python_setup.py</code></em> (don’t run it yet)</li>
-<li>install the Python extension when prompted (or manually)</li>
-<li>open the Settings (<code>CTRL</code> + <code>,</code>), search “execin”, check the box for “Python &gt; Terminal: execute in file dir” (<a href="https://stackoverflow.com/a/65835091">Source</a>)</li>
-<li>now run the file as instructed inside.</li>
-</ul></li>
-<li><mark>Step 4e</mark>: customize keyboard shortcuts, suggestions as in RStudio.
-<ul>
-<li>press <code>CTRL</code> + <code>K</code> + <code>S</code> (or click the cog wheel at the bottom left).</li>
-<li>set each wanted shortcut, then rightclick -&gt; “show same keybindings” to deal with duplicates.<br>
+<li>Press <code>CTRL</code> + <code>K</code> + <code>S</code> (or click the cog wheel at the bottom left).</li>
+<li>Set each wanted shortcut, then rightclick -&gt; “show same keybindings” to deal with duplicates.<br>
 </li>
-<li>search for the action e.g.&nbsp;with “python run” or “comment”</li>
+<li>Search for the action e.g.&nbsp;with “python run” or “toggle comment”.</li>
+</ul></li>
 </ul>
 <table class="caption-top table">
 <colgroup>
@@ -206,27 +227,21 @@ If you already have a personal github account, use that :)</li>
 <td>Duplicate Selection</td>
 <td><code>CTRL</code> + <code>SHIFT</code> + <code>D</code></td>
 </tr>
+<tr class="even">
+<td>Tasks: Run Task (from step 4b)</td>
+<td>change if wanted</td>
+</tr>
 </tbody>
-</table></li>
-</ul>
+</table>
 </section>
-<section id="qmd" class="level4">
-<h4 class="anchored" data-anchor-id="qmd">qmd</h4>
+<section id="quarto" class="level4">
+<h4 class="anchored" data-anchor-id="quarto">Quarto</h4>
 <ul>
-<li><mark>Step 5a</mark>: run quarto markdown scripts in <strong>VScode</strong>:
+<li><mark>Step 5</mark>: render quarto markdown scripts as instructed inside:
 <ul>
-<li>open <em><code>install/5a_check_quarto.qmd</code></em></li>
-<li>install the Quarto extension when prompted (or manually)</li>
-<li>restart VScode</li>
-<li>render (a.k.a. compile) the file as instructed inside</li>
-</ul></li>
-<li><mark>Step 5b</mark>: open <em><code>install/5a_check_quarto.qmd</code></em> in <strong>RStudio</strong>
-<ul>
-<li>render as instructed</li>
-</ul></li>
-<li><mark>Step 5c</mark>: open <em><code>install/5c_check_quarto_python.qmd</code></em> in <strong>RStudio</strong>
-<ul>
-<li>run code chunks as instructed</li>
+<li>In <strong>VScode</strong>, open <em><code>fpsetup/5a_quarto_vscode.qmd</code></em></li>
+<li>In <strong>RStudio</strong>, open <em><code>fpsetup/5b_quarto_rstudio.qmd</code></em></li>
+<li>In <strong>RStudio</strong>, open <em><code>fpsetup/5c_quarto_python_rstudio.qmd</code></em></li>
 </ul></li>
 </ul>
 </section>

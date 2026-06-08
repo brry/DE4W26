@@ -1,0 +1,24 @@
+---
+title: "check_quarto"
+format:
+  html:
+    embed-resources: true
+---
+
+Click the Preview button (topright) to render (a.k.a. compile) the file.
+
+## Section title
+
+This is a mini [quarto](https://quarto.org/) document with text and some R code.  
+
+Rendering as instructed above will execute the code chunks and weave together the text, code and output.
+
+```{r, plot_example, echo=TRUE}
+pairs(iris[, 1:4], main="Anderson's Iris Data",
+      col=c("orange", "salmon", "lightblue")[iris$Species], 
+	  pch=16, cex=1.5, lower.panel=NULL, las=1)
+```
+
+More in lesson i.2, specifically the homework.
+
+If you can see this rendered with a colorful plot, open 5b_quarto_rstudio.qmd in Rstudio.

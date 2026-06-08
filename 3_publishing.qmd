@@ -82,6 +82,7 @@ Write a short informative message (why, not what) and press **Commit**.
 
 -   `format: revealjs`, &ensp; `echo: true`, &ensp; `incremental: true`
 -   `embed-resources: true`, &ensp; `chalkboard: true`
+-   drag Presentation window large enough to see graphs
 -   visual editor
 -   `## slide title`
 -   `. . .` (with blank lines) for animation
